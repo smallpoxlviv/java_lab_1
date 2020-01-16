@@ -10,17 +10,17 @@ public class Main {
                 5, 210, 200, 150);
 
         System.out.println("--------first elevator---------");
-        first.toString();
+        System.out.println(first);
         System.out.println("-------second elevator--------");
-        second.toString();
+        System.out.println(second);
         System.out.println("--------third elevator--------");
-        third.toString();
-        System.out.println();
+        System.out.println(third);
 
         System.out.println("height was printed by static function:");
         Elevator.printStaticHeight();
         System.out.println("height was printed by non-static function:");
         first.printHeight();
+        System.out.println();
 
         Elevator[] arrayOfElevators = new Elevator[4];
         int iterator = 0;
@@ -31,9 +31,8 @@ public class Main {
 
         iterator = 1;
         for (Elevator itElevator: arrayOfElevators) {
-            System.out.println();
             System.out.println(iterator + " elevator:");
-            itElevator.toString();
+            System.out.println(itElevator);
             iterator++;
         }
     }

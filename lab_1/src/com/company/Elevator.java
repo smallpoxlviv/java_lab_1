@@ -14,17 +14,17 @@ public class Elevator {
 
     Elevator(){}
 
-    Elevator(String name, int kg, int watts, int floors) {
-        this.nameOfProducer = name;
-        this.liftingCapacityInKg = kg;
-        this.powerConsumptionInWatt = watts;
-        this.numberOfFloors = floors;
+    Elevator(String nameOfProducer, int liftingCapacityInKg, int powerConsumptionInWatt, int numberOfFloors) {
+        this.nameOfProducer = nameOfProducer;
+        this.liftingCapacityInKg = liftingCapacityInKg;
+        this.powerConsumptionInWatt = powerConsumptionInWatt;
+        this.numberOfFloors = numberOfFloors;
     }
 
-    Elevator(String name, int kg, int watts, int floors,
-             int cables, int height, int length, int width) {
-        this(name, kg, watts, floors);
-        this.numberOfFasteningCables = cables;
+    Elevator(String nameOfProducer, int liftingCapacityInKg, int powerConsumptionInWatt, int numberOfFloors,
+             int numberOfFasteningCables, int height, int length, int width) {
+        this(nameOfProducer, liftingCapacityInKg, powerConsumptionInWatt, numberOfFloors);
+        this.numberOfFasteningCables = numberOfFasteningCables;
         Elevator.height = height;
         this.length = length;
         this.width = width;
@@ -34,16 +34,16 @@ public class Elevator {
         return this.numberOfFloors;
     }
 
-    void setNumberOfFloors(int number) {
-        this.numberOfFloors = number;
+    void setNumberOfFloors(int numberOfFloors) {
+        this.numberOfFloors = numberOfFloors;
     }
 
     int getNumberOfFasteningCables() {
         return this.numberOfFasteningCables;
     }
 
-    void setNumberOfFasteningCables(int cables) {
-        this.numberOfFasteningCables = cables;
+    void setNumberOfFasteningCables(int numberOfFasteningCables) {
+        this.numberOfFasteningCables = numberOfFasteningCables;
     }
 
     static void printStaticHeight() {
@@ -56,24 +56,23 @@ public class Elevator {
 
     @Override
     public String toString() {
-        System.out.println("Name of the producer: " + "\"" + nameOfProducer + "\"");
-        System.out.println("Lifting capacity: " + liftingCapacityInKg + " kg");
-        System.out.println("Engine power consumption: " + powerConsumptionInWatt + " Watt");
-        System.out.println("Number of floors: " + numberOfFloors);
-        System.out.println("Number of fastening cables: " + numberOfFasteningCables);
         printHeight();
-        System.out.println("Length: " + length);
-        System.out.println("Width: " + width);
-        return null;
+        return  "Length: " + length + "\n" +
+                "Width: " + width + "\n" +
+                "Name of the producer: " + "\"" + nameOfProducer + "\"\n" +
+                "Lifting capacity: " + liftingCapacityInKg + " kg" + "\n" +
+                "Engine power consumption: " + powerConsumptionInWatt + " Watt" + "\n" +
+                "Number of floors: " + numberOfFloors + "\n" +
+                "Number of fastening cables: " + numberOfFasteningCables + "\n";
     }
 
-    void resetValues(String name, int kg, int watts, int floors,
-                     int cables, int height, int length, int width) {
-        this.nameOfProducer = name;
-        this.liftingCapacityInKg = kg;
-        this.powerConsumptionInWatt = watts;
-        this.numberOfFloors = floors;
-        this.numberOfFasteningCables = cables;
+    void resetValues(String nameOfProducer, int liftingCapacityInKg, int powerConsumptionInWatt, int numberOfFloors,
+                     int numberOfFasteningCables, int height, int length, int width) {
+        this.nameOfProducer = nameOfProducer;
+        this.liftingCapacityInKg = liftingCapacityInKg;
+        this.powerConsumptionInWatt = powerConsumptionInWatt;
+        this.numberOfFloors = numberOfFloors;
+        this.numberOfFasteningCables = numberOfFasteningCables;
         Elevator.height = height;
         this.length = length;
         this.width = width;
