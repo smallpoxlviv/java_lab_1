@@ -15,19 +15,13 @@ public class Elevator {
     Elevator(){}
 
     Elevator(String nameOfProducer, int liftingCapacityInKg, int powerConsumptionInWatt, int numberOfFloors) {
-        this.nameOfProducer = nameOfProducer;
-        this.liftingCapacityInKg = liftingCapacityInKg;
-        this.powerConsumptionInWatt = powerConsumptionInWatt;
-        this.numberOfFloors = numberOfFloors;
+        this(nameOfProducer, liftingCapacityInKg, powerConsumptionInWatt, numberOfFloors, 0, 0, 0, 0);
     }
 
     Elevator(String nameOfProducer, int liftingCapacityInKg, int powerConsumptionInWatt, int numberOfFloors,
              int numberOfFasteningCables, int height, int length, int width) {
-        this(nameOfProducer, liftingCapacityInKg, powerConsumptionInWatt, numberOfFloors);
-        this.numberOfFasteningCables = numberOfFasteningCables;
-        Elevator.height = height;
-        this.length = length;
-        this.width = width;
+        resetValues(nameOfProducer, liftingCapacityInKg, powerConsumptionInWatt, numberOfFloors,
+                    numberOfFasteningCables, height, length, width);
     }
 
     int getNumberOfFloors() {
